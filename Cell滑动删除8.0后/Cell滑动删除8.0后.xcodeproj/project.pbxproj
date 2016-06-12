@@ -16,6 +16,7 @@
 		BDD758CD1D0CD9A600594714 /* Cell____8_0_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD758CC1D0CD9A600594714 /* Cell____8_0_Tests.m */; };
 		BDD758D81D0CD9A600594714 /* Cell____8_0_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD758D71D0CD9A600594714 /* Cell____8_0_UITests.m */; };
 		BDD758E71D0CD9C800594714 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD758E61D0CD9C800594714 /* RootViewController.m */; };
+		BDD758EA1D0D008500594714 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD758E91D0D008500594714 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		BDD758D91D0CD9A600594714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDD758E51D0CD9C800594714 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BDD758E61D0CD9C800594714 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		BDD758E81D0D008500594714 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		BDD758E91D0D008500594714 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				BDD758B91D0CD9A500594714 /* ViewController.m */,
 				BDD758E51D0CD9C800594714 /* RootViewController.h */,
 				BDD758E61D0CD9C800594714 /* RootViewController.m */,
+				BDD758E81D0D008500594714 /* TableViewController.h */,
+				BDD758E91D0D008500594714 /* TableViewController.m */,
 				BDD758BB1D0CD9A500594714 /* Main.storyboard */,
 				BDD758BE1D0CD9A500594714 /* Assets.xcassets */,
 				BDD758C01D0CD9A500594714 /* LaunchScreen.storyboard */,
@@ -281,6 +286,7 @@
 				BDD758BA1D0CD9A500594714 /* ViewController.m in Sources */,
 				BDD758B71D0CD9A500594714 /* AppDelegate.m in Sources */,
 				BDD758E71D0CD9C800594714 /* RootViewController.m in Sources */,
+				BDD758EA1D0D008500594714 /* TableViewController.m in Sources */,
 				BDD758B41D0CD9A500594714 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +513,7 @@
 				BDD758DE1D0CD9A600594714 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BDD758DF1D0CD9A600594714 /* Build configuration list for PBXNativeTarget "Cell滑动删除8.0后Tests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +522,7 @@
 				BDD758E11D0CD9A600594714 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BDD758E21D0CD9A600594714 /* Build configuration list for PBXNativeTarget "Cell滑动删除8.0后UITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +531,7 @@
 				BDD758E41D0CD9A600594714 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

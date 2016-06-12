@@ -9,15 +9,24 @@
 #import "RootViewController.h"
 
 @interface RootViewController ()
-
+@property(nonatomic,strong) NSMutableArray * dataArray;
 @end
 
 @implementation RootViewController
-
+//懒加载
+-(NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        self.dataArray = [NSMutableArray arrayWithCapacity:1];
+    }return _dataArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    for (int i = 0; i<20; i++) {
+        NSString * str = [NSString stringWithFormat:@"%d行",i];
+        [self.dataArray addObject:str];
+
+    }
+
 }
 
 
@@ -25,19 +34,17 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 10;
+    return _dataArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat: @"%ld行",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat: @"%@",_dataArray[indexPath.row]];
     
     return cell;
 }
@@ -56,11 +63,19 @@
 -(NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewRowAction *shanchu = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         NSLog(@"删除");
+        [self.dataArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }];
-    UITableViewRowAction * biaoqian = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleNormal) title:@"标签" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        NSLog(@"标签");
+    UITableViewRowAction * biaoqian = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleNormal) title:@"置顶" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        NSLog(@"置顶");
+        //插入
+        [self.dataArray insertObject:_dataArray[indexPath.row] atIndex:0];
+        //删除
+        [self.dataArray removeObjectAtIndex:indexPath.row+1];
+        //刷新
+        [self.tableView reloadData];
+       
     }];
-    biaoqian.backgroundColor = [UIColor yellowColor];
     return @[shanchu,biaoqian];
 }
 
